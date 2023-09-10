@@ -17,7 +17,7 @@ def send_email(image_path):
 
     with open(image_path, "rb") as file:
         content = file.read()
-    email_message.add_attachment(content, maintype="image", subtype=imghdr.what(None, content))
+    email_message.add_attachment(content, maintype="images", subtype=imghdr.what(None, content))
 
     gmail = smtplib.SMTP("smtp.gmail.com", 587)
     gmail.ehlo()
